@@ -9,7 +9,7 @@
         <main class="bg-gray-100 p-4">
           <slot />
         </main>
-        <footer class="col-span-12 bg-gray-700 text-center mx-4">Site footer Copyright 2020</footer>
+        <footer-main><slot /></footer-main>
       </div>
     </div>
   </div>
@@ -20,10 +20,12 @@
 import { defineComponent, ref } from 'vue';
 import SideBar from '../components/nav/NavigationAside.vue';
 import HeaderMain from '../components/nav/NavigationMain.vue';
+import FooterMain from '../components/FooterMain.vue';
 export default defineComponent({
   components: {
     HeaderMain,
     SideBar,
+    FooterMain,
   },
 });
 </script>
