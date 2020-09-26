@@ -14,4 +14,11 @@ module.exports = {
   separator: ':',
   corePlugins: {},
   plugins: [],
+  theme: {
+    extend: {
+      gridTemplateColumns: {
+        'dashboard': '150px minmax(350px, 1fr)',
+      }
+    }
+  }
 }
