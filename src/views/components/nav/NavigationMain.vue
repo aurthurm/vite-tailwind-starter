@@ -58,7 +58,7 @@
       <div>
         <img
           class="inline-block h-10 w-10 rounded-full border-2 border-gray-400 hover:border-gray-300 focus:border-gray-300 focus:outline-none"
-          src="https://avatars0.githubusercontent.com/u/4323180?s=460&amp;v=4"
+          src="https://avatars0.githubusercontent.com/u/17094364?s=460&amp;v=4"
           alt=""
         />
       </div>
