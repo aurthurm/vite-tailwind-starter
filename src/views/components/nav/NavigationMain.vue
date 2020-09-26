@@ -14,7 +14,7 @@
         <input
           class="w-full pl-8 pr-2 py-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
           type="text"
-          placeholder="Search for projects"
+          placeholder="Search ..."
           aria-label="Search"
         />
       </div>
@@ -22,24 +22,37 @@
     <a
       href="#"
       class="no-underline text-white opacity-50 flex items-center px-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
-      >First</a
     >
-    <a
-      href="#"
-      class="no-underline text-white opacity-50 flex items-center px-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
-      >Second</a
-    >
-    <a
-      href="#"
-      class="no-underline text-white opacity-50 flex items-center px-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
-      >Third</a
-    >
+      <font-awesome-icon icon="chart-line" class="mr-2" />
+      <span>Analytics</span>
+    </a>
     <a
       href="#"
       class="no-underline text-white opacity-50 flex items-center px-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
     >
-      <i class="fa fa-wallet fa-fw mr-3"></i>
-      <span class="text-sm">Payments</span>
+      <font-awesome-icon icon="flag" class="mr-2" />
+      <span>Activities</span>
+    </a>
+    <a
+      href="#"
+      class="no-underline text-white opacity-50 flex items-center px-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
+    >
+      <font-awesome-icon icon="bell" class="mr-2" />
+      <span>Notifications</span>
+    </a>
+    <a
+      href="#"
+      class="no-underline text-white opacity-50 flex items-center px-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
+    >
+      <font-awesome-icon icon="envelope" class="mr-2" />
+      <span class="text-sm">Messages</span>
+    </a>
+    <a
+      href="#"
+      class="no-underline text-white opacity-50 flex items-center px-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
+    >
+      <font-awesome-icon icon="cog" class="mr-2" />
+      <span class="text-sm">Settings</span>
     </a>
     <div class="flex text-right align-middle py-2">
       <div>
@@ -49,20 +62,63 @@
           alt=""
         />
       </div>
-      <div class="hidden md:block md:flex md:items-center ml-2">
-        <span class="text-white text-sm mr-1">Aurthur Musendame</span>
-        <div>
-          <svg
-            class="fill-current text-white h-4 w-4 block opacity-50"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
+
+      <div class="relative">
+        <div
+          @click="dropdownOpen = !dropdownOpen"
+          class="hidden md:block md:flex md:items-center ml-2 mt-2"
+        >
+          <span class="text-white text-sm mr-1">Aurthur Musendame</span>
+          <div>
+            <font-awesome-icon icon="chevron-down" class="text-gray-400" />
+          </div>
+        </div>
+
+        <div
+          v-show="dropdownOpen"
+          @click="dropdownOpen = false"
+          class="fixed inset-0 h-full w-full z-10"
+        ></div>
+
+        <div
+          v-show="dropdownOpen"
+          class="absolute right-0 mt-4 py-2 w-48 bg-gray-700 rounded-md shadow-xl z-20"
+        >
+          <a
+            href="#"
+            class="no-underline text-gray-500 py-1 opacity-50 flex items-center px-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark hover:bg-gray-800 hover:text-gray-200"
+            >Profile</a
           >
-            <path
-              d="M4.516 7.548c.436-.446 1.043-.481 1.576 0L10 11.295l3.908-3.747c.533-.481 1.141-.446 1.574 0 .436.445.408 1.197 0 1.615-.406.418-4.695 4.502-4.695 4.502a1.095 1.095 0 0 1-1.576 0S4.924 9.581 4.516 9.163c-.409-.418-.436-1.17 0-1.615z"
-            ></path>
-          </svg>
+          <a
+            href="#"
+            class="no-underline text-gray-500 py-1 opacity-50 flex items-center px-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark hover:bg-gray-800 hover:text-gray-200"
+            >Products</a
+          >
+          <router-link
+            to="/auth"
+            class="no-underline text-gray-500 py-1 opacity-50 flex items-center px-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark hover:bg-gray-800 hover:text-gray-200"
+            >Log out</router-link
+          >
         </div>
       </div>
     </div>
   </nav>
 </template>
+
+
+
+
+
+<script lang="ts">
+import { defineComponent, ref } from 'vue';
+export default defineComponent({
+  setup(_, { emit }) {
+    const dropdownOpen = ref(false);
+    const isOpen = ref(false);
+    return {
+      isOpen,
+      dropdownOpen,
+    };
+  },
+});
+</script>
