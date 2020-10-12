@@ -1,6 +1,6 @@
 <template>
   <nav id="main-nav" class="flex justify-end px-4 bg-gray-700" role="navigation">
-    <div class="flex justify-center flex-1 lg:mr-32 py-2">
+    <div class="flex justify-center flex-1 py-2">
       <div class="relative w-full max-w-xl mr-6 focus-within:text-purple-500">
         <div class="absolute inset-y-0 flex items-center pl-2">
           <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">

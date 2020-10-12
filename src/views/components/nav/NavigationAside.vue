@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto">
-    <router-link to="/" id="brand" class="flex items-middle md:w-auto pl-6 py-2 text-white">
+    <router-link to="/" id="brand" class="flex items-center md:w-auto pl-6 py-2 text-white">
       <font-awesome-icon icon="meteor" class="text-4xl" />
       <h1 class="text-left text-2xl font-medium ml-2">Felicity LIMS</h1>
     </router-link>
